@@ -11,6 +11,17 @@ app.config['DEBUG']=True # Evita tener que re-ejecutar la aplicación en caso de
 
 classifier_loaded = joblib.load('saved_models/randomForest.pkl')
 
+# Route for the GitHub webhook
+
+@app.route('/git_update', methods=['POST'])
+def git_update():
+    repo = git.Repo('./Flask')
+    origin = repo.remotes.origin
+    repo.create_head('main',
+                     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+    origin.pull()
+    return '', 200
+
 @app.route('/', methods=["GET"]) # No es necesario otros métodos como POST, dado que es la página principal.
 # Creamos el formulario de la página inicial
 def index():
