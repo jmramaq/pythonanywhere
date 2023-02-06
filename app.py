@@ -25,7 +25,7 @@ def git_update():
 @app.route('/', methods=["GET"]) # No es necesario otros métodos como POST, dado que es la página principal.
 # Creamos el formulario de la página inicial
 def index():
-    return "Página Inicial. Homepage. Agregado posterior."
+    return "Página Inicial. Homepage. Agregado posterior.\nOtra prueba de agregado"
 
 
 # Creamos el formulario de la página v1
