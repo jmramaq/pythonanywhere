@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, session, url_for, redirect, render_template, flash
 import pickle
-import joblib
 
 # IMPORTAR FORMULARIO CUSTOM
 # from flower_form import FlowerForm
@@ -8,8 +7,6 @@ import joblib
 app = Flask(__name__)
 
 app.config['DEBUG']=True # Evita tener que re-ejecutar la aplicación en caso de fallo. Se actualizan los cambios cada vez que se guardan
-
-classifier_loaded = joblib.load('saved_models/randomForest.pkl')
 
 # Route for the GitHub webhook
 
