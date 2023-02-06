@@ -14,7 +14,7 @@ classifier_loaded = joblib.load('saved_models/randomForest.pkl')
 @app.route('/', methods=["GET"]) # No es necesario otros métodos como POST, dado que es la página principal.
 # Creamos el formulario de la página inicial
 def index():
-    return "Página Inicial. Homepage"
+    return "Página Inicial. Homepage. Agregado posterior."
 
 
 # Creamos el formulario de la página v1
